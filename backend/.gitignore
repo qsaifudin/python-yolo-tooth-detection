@@ -1,0 +1,48 @@
+# Virtual environment
+venv/
+env/
+*.pyc
+__pycache__/
+
+myenv/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Database files
+*.db
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development files
+instance/
+
+# Temporary files
+*.swp
+*.swo
+
+# System and IDE generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+node_modules/
