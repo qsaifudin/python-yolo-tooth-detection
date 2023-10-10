@@ -1,48 +1,45 @@
-# Virtual environment
+# Virtual Environment
 venv/
-env/
-*.pyc
-__pycache__/
-
 myenv/
 
 # Compiled Python files
 *.pyc
-*.pyo
 __pycache__/
 
-# IDE and editor files
+# Logs and Temporary Files
+*.log
+*.swp
 .vscode/
 .idea/
 
-# Logs
-*.log
-
-# Environment variables
+# Configuration Files
 .env
 
-# Database files
+# Database Files (if applicable)
+*.sqlite
 *.db
 
-# Compiled files
-*.pyc
-*.pyo
+# Dependency Lock Files
+requirements.txt
+Pipfile.lock
+poetry.lock
 
-# Byte-compiled / optimized / DLL files
+# Sensitive or Private Information (Do not commit these!)
+.env
+
+# Output and Build Files
+build/
+dist/
+*.egg-info/
+
+# User-specific Files
+.vscode/
+.idea/
+.vscode-server/
+
+# Cache and Temporary Files
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
 
-# Local development files
-instance/
-
-# Temporary files
-*.swp
-*.swo
-
-# System and IDE generated files
+# System Files (macOS)
 .DS_Store
-Thumbs.db
-
-# Dependency directories
-node_modules/
