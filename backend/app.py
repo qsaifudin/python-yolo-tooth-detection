@@ -115,9 +115,9 @@ def create_data():
     if os.path.exists(exp_folder):
         shutil.rmtree(exp_folder)
 
-    process = Popen(['python', '../yolov5/detect.py',
-                     '--weights', '../yolov5/best-m.pt',
-                    '--img', '640',
+    process = Popen(['python', '../detection/yolov5/detect.py',
+                     '--weights', '../detection/model/best.pt',
+                    '--img', '608',
                      '--conf-thres', '0.2',
                      '--source', file_path,
                      '--line-thickness', '1',
