@@ -4,6 +4,9 @@ module.exports = {
       name: 'yolo-fe',
       script: 'npm',
       args: 'start',
+      env: {
+        PORT: 3001,
+      },
     },
   ],
 };
