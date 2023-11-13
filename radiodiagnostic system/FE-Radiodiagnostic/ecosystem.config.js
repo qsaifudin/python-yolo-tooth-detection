@@ -2,8 +2,8 @@ module.exports = {
     apps: [
       {
         name: 'radio-fe',
-        script: 'npm',
-        args: 'start',
+        script: 'serve',
+        args: '-u build',
       },
     ],
   };
