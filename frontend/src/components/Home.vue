@@ -63,7 +63,7 @@
           <v-card-text>
             <v-row>
               <v-col my-5>
-                <v-form @submit="submitForm">
+                <v-form>
                   <v-text-field v-model="nama" label="Nama"></v-text-field>
                   <v-text-field
                     v-model="rekam_medik"
@@ -80,9 +80,9 @@
                   ></v-file-input>
                   <v-btn
                     :disabled="isFormIncomplete"
+                    @click="submitForm"
                     required
                     class="mt-3"
-                    type="submit"
                     color="primary"
                     block
                     size="large"
@@ -136,6 +136,114 @@
                   :src="data.gambar"
                   :key="componentKey"
                 />
+              </v-col>
+            </v-row>
+
+            <v-row class="text-center mt-6">
+              <v-col>
+                <div class="">
+                  <h2>Odontogram</h2>
+                  <div class="text-center mt-3">
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      18
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      17
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      16
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      15
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      14
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      13
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      12
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      11
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      21
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      22
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      23
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      24
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      25
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      26
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      27
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      28
+                    </v-chip>
+                  </div>
+                  <div class="text-center mt-12 pa-12">
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      18
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      17
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      16
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      15
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      14
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      13
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      12
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      11
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      21
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      22
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      23
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      24
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      25
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      26
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      27
+                    </v-chip>
+                    <v-chip class="pa-6 ma-1" outlined x-large label>
+                      28
+                    </v-chip>
+                  </div>
+                </div>
               </v-col>
             </v-row>
           </v-card-text>
@@ -212,6 +320,7 @@ export default {
       this.overlay = true;
 
       try {
+        console.log("Uploading file..." + `${this.apiUrl}/data`);
         const response = await axios.post(`${this.apiUrl}/data`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",

@@ -41,11 +41,19 @@ const SidebarRadiografer = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink activeClassName="active" className="nav-link" to="/radiografer-radiografi-panoramik">
+                <NavLink activeClassName="active" className="nav-link" to="/radiografer-radiografi-panoramik" target="_blank">
                   <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                     <img src="../assets/img/App/radiografi_panoramik.png" />
                   </div>
                   <span className="nav-link-text ms-1">Radiografi Panoramik</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink activeClassName="active" className="nav-link" to="http://localhost:3001">
+                  <div className="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                    <img src="../assets/img/App/radiografi_panoramik.png" />
+                  </div>
+                  <span className="nav-link-text ms-1">Odontogram</span>
                 </NavLink>
               </li>
               <li className="nav-item">

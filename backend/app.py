@@ -21,6 +21,7 @@ JSON_FILE = 'data.json'
 
 
 def read_data():
+    print("dddddddddddd")
     if not os.path.exists(JSON_FILE):
         return []
 
@@ -51,12 +52,12 @@ def get_gambar(filename):
 @app.route('/data', methods=['POST'])
 def create_data():
 
-    # print('-------------')
-    # print(request.is_json)
-    # for field_name, field_value in request.form.items():
-    #     print(f'{field_name}: {field_value}')
+    print('-------------')
+    print(request.is_json)
+    for field_name, field_value in request.form.items():
+        print(f'{field_name}: {field_value}')
 
-    # print('-------------')
+    print('-------------')
     # files = request.files.getlist('file_gambar')
     # for file in files:
     #     # Access file properties
@@ -116,7 +117,7 @@ def create_data():
         shutil.rmtree(exp_folder)
 
     process = Popen(['python', '../detection/yolov5/detect.py',
-                     '--weights', '../detection/model/best.pt',
+                     '--weights', '../detection/model/yolov5.pt',
                     '--img', '608',
                      '--conf-thres', '0.2',
                      '--source', file_path,
@@ -146,7 +147,7 @@ def get_all_data():
     if not data:
         return jsonify({}), 200
 
-    data['gambar'] = "http://localhost:5000/gambar/img.jpg"
+    data['gambar'] = "http://localhost:5001/gambar/img.jpg"
     return jsonify(data), 200
 
 # Mendefinisikan endpoint untuk mendapatkan data berdasarkan ID
@@ -223,4 +224,4 @@ if __name__ == '__main__':
     # Membuat folder 'detect/test' jika belum ada
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     # app.run(debug=True, port=5001)
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)
