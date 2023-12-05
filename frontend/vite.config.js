@@ -3,11 +3,14 @@ import vue from "@vitejs/plugin-vue";
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 // Utilities
-import { defineConfig } from "vite";
+import { defineConfig,loadEnv } from "vite";
 import { fileURLToPath, URL } from "node:url";
 
+
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command, mode })=>{
+  const env = loadEnv(mode, process.cwd(), '')
+  return {
   plugins: [
     vue({
       template: { transformAssetUrls },
@@ -18,9 +21,10 @@ export default defineConfig({
     }),
   ],
   define: {
-    "process.env": {
-      VUE_APP_API_BASE_URL: "http://localhost:5001",
-    },
+
+      'process.env.VUE_APP_API_BASE_URL': JSON.stringify(env.BASE_URL),
+      'process.env.PORT': JSON.stringify(env.PORT),
+
   },
   resolve: {
     alias: {
@@ -29,6 +33,7 @@ export default defineConfig({
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
   server: {
-    port: 3001,
+    port: env.PORT,
   },
-});
+}}
+);

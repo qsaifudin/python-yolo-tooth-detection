@@ -196,6 +196,7 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
+                        save_one_box(xyxy, imc, file=save_dir / 'crops-square' / names[c] / f'{p.stem}.jpg',square=True, BGR=True)
 
             # Stream results
             im0 = annotator.result()
